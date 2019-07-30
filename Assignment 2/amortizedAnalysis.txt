@@ -1,0 +1,8 @@
+Anthony Huynh 
+CS 261
+Amortized Analysis
+	1. It will take 106 units of time to push 50 elements onto an array that doubles with an original capacity of 8.
+		After following the pattern, I found that the average time was bounded at 3 units per element inserted.
+		This would mean that the big-oh of this algorithm is O(1)+.
+	2. It will take 638 units of time to push 50 elements onto an array that increases its capacity by 2 and starts with a capacity of 8. 
+		After following the patter, I found that the average time was not bounded, and so the big-oh for this algorithm is O(n).
