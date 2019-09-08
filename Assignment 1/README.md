@@ -28,3 +28,16 @@ Implement the following functions and demonstrate their functionality by calling
 	3.Write a function void output (struct student* students) that prints the IDs and scores of all the students. The output of the function needs notto be sorted.
 	4.Write a function void summary (struct student* students) that prints the minimum score, maximum score and average score of the tenstudents.
 	5.Write a function void deallocate (struct student* stud) that frees the memory allocated to students. Check that students is not NULL (NULL== 0) before you attempt to free it.
+
+## Q2.c
+Write a program (Q2.c) with the following:
+
+	1)The function int foo(int *a, int *b, int c) should perform the following computations –
+	- Swap the addresses of variables pointed to by the pointer variables a and b (not the values of the integers pointed to by a and b).
+	- Decrement the value of c. 
+	- Return the value of c.
+	2)In the main function, declare three integers x, y, and z, and assign them random integer values in the interval [0, 10].
+	3) Print the values of the integers x, y, and z. Call foo(..) appropriately passing x, y, and z as arguments. Print out the values of integers x, y, and z after calling the function foo(..). Also, print the value returned by foo(..).
+	4)Answer the following questions in a comment at the bottom of the file:
+		a)Is the return value different than the value of integer z? Why or why not?
+		b) Are the values of integers x and y different before and after calling the function foo(..)? Why or why not?
