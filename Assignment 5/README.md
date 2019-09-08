@@ -44,5 +44,14 @@ The spellchecker program flow should as following -
 
     1. The user types in a word [only one word (consists of uppercase and lowercase letters only) at a time should be allowed].
     2. If the spelling is correct, the following message should be outputted - " The inputted word .... is spelled correctly". If the spelling is incorrect, the following message should be outputted -
-    3. " The inputted word .... is spelled incorrectly". Also, 5 potential matches should be outputted like "Did you mean...?" (5 choices ).
+    3. "The inputted word .... is spelled incorrectly". Also, 5 potential matches should be outputted like "Did you mean...?" (5 choices ).
     4. Continue to prompt user for word until they type "Quit".
+    
+One way to implement a dictionary that's used for a spellchecker would probably be to design it with that purpose in mind from the beginning, i.e. associating a similarity for each word to some base word (maybe "abcdefghijklmnopqrstuvwyz") and then incorporating that into the hash function. But there are better ways (https://en.wikipedia.org/wiki/Levenshtein_distance) to establish similarity than computing the cosine of the angle between two vectors (strings) to create a list of candidates and further winnowed that list according to substring comparisons. So, I would say calculating the Levenshtein distance between the misspelled word and all strings in the dictionary, create 5 best candidates and print them as suggestion.
+
+Below is one exapmple of the steps that you can follow to implement your spellchecker -
+        
+    Step 1: Compare input buffer to words in the dictionary, computing their Levenshtein distance. Store that distance as the value for each key in the table.
+    Step 2: Traverse down the hash table, checking each bucket. Jump out if you find an exact matching dictionary word. And print a message that "The inputted word .... is spelled correctly".
+    Step 3: f the input Buffer did not match any of the dictionary words exactly, generate an array of 5 words that are closest matches to input Buffer based on the lowest Levenshtein distance. Print the array including the message s "The inputted word .... is spelled incorrectly", " Did you mean .... ? (5 choices)".
+    Step 4: Continue to prompt user for word until they type "Quit".
