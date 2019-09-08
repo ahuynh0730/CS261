@@ -41,3 +41,16 @@ Write a program (Q2.c) with the following:
 	4)Answer the following questions in a comment at the bottom of the file:
 		a)Is the return value different than the value of integer z? Why or why not?
 		b) Are the values of integers x and y different before and after calling the function foo(..)? Why or why not?
+		
+## Q3.c 
+Write a function void camelCase(char* word) where the argument "word" to the function camelCase(..) consists of at least two groups of lowercase alphabetic characters, not necessarily forming actual words in the dictionary, separated by underscores, such as “ran_dom_word” or "this_is_my_first_programming_assignment". The function camelCase(..) should remove underscores from the string and rewrite it in lower camel case (several words joined together where the first letter of the entire string is lowercase, but subsequent first letters are uppercase). Watch out for the end of the string, which is denoted by ‘\0’. It’s possible that a user provided input string may contain uppercase alphabetic characters, numeric characters, special symbols, whitespace etc. as well. You should accept such an input string too. For convenience, convert the string into a valid form before you use it for the function camelCase(..). Below are some conversion examples of what you should implement -
+
+	a) "_random_ _word_provided" should be converted to "random_word_provided" first, then finally to "randomWordProvided" using the function camelCase(..).
+	b) "@$ptr*4con_" should be converted to "ptr_con" first, then finally to "ptrCon" using the function camelCase(..).
+	c) " ran dom word" should be converted to "ran_dom_word" first, then finally to "ranDomWord" using the function camelCase(..).
+	d) "example word " should be converted to "example_word" first, then finally to "exampleWord" using the function camelCase(..).
+	e) "ANOTHER_Word" should be converted to "another_word" first, then finally to "anotherWord" using the function camelCase(..).
+	f) One or more combinations from options a, b, c, d and e should be also taken care of.
+Examples of the strings that you must not allow as inputs are - "__", "_ _ _", " ", "435%7_$$", "random". Print “invalid input string” for such cases. 
+
+You are allowed to limit the size of the input string you will provide. Finally, do not use the library functions isupper(..), islower(..) or strlen(..). Write the code on your own to perform such string operations if required.
