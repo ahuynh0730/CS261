@@ -14,7 +14,7 @@ Worksheet 29 will get you started on your implementation. However, there is one 
 For example, if you want to store doubles in your tree, you might define the following struct to store at each node.
 
 	struct data {
-			double num;
+		double num;
 	}
 	
 And then define your compare function to simply compare the two structs based on the num field. However, a user of your data structure could also do the following:
